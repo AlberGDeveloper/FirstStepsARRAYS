@@ -46,7 +46,7 @@ public class Main168 {
 
 				// Si despues de recorrer todo el puzzle no he encontrado el valor buscado es la
 				// pieza que falta
-				if (!piezaencontrada) {
+				if (piezaencontrada == false) {
 					pieza = i;
 					break;
 				}

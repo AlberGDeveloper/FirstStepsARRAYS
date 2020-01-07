@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main376 {
+public class Main3 {
 	public static boolean casoDePrueba(Scanner in) {
 // Variable que controla si el caso hay que analizarlo o finaliar
 		boolean continuar = true;
@@ -19,8 +19,18 @@ public class Main376 {
 // Proceso -> Búsqueda de picos
 			int picos = 0;
 // Caso cicular 1: El primero debe ser mayor que el último y mayor que el segundo
+			if (alturas[0] > alturas[alturas.length - 1] && alturas[0] > alturas[1])
+				picos++;
 // Caso ciruclar 2: El último debe ser mayor que el anterior y mayor que el primero
+			if (alturas[alturas.length - 1] > alturas[alturas.length - 2] && alturas[alturas.length - 1] > alturas[0])
+				picos++;
+
 // Casos intermedios
+			for (int i = 1; i < alturas.length - 1; i++) {
+				if (alturas[i] > alturas[i - 1] && alturas[i] > alturas[i + 1])
+					picos++;
+			}
+
 // Salida
 			System.out.println(picos);
 		}
