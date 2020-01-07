@@ -6,7 +6,7 @@ public class Main168 {
 // Variable que controla si el caso hay que analizarlo o finalizar
 		boolean continuar = true;
 // Se lee la candidad de piezas o el caso especial que es 0
-		System.out.println("Introduzca el número de piezas totales o 0 para terminar");
+
 		int cantidad = in.nextInt();
 // Si es el caso especial, no se ejecuta nada y continuar = false
 		if (cantidad == 0)
@@ -16,7 +16,6 @@ public class Main168 {
 			int[] puzzle = new int[cantidad - 1];
 // Lectura de las piezas del puzzle
 
-			System.out.println("Introduzca las piezas que existen separadas por espacios y pulse ENTER");
 			for (int i = 0; i < puzzle.length; i++) {
 				puzzle[i] = in.nextInt();
 			}
@@ -39,7 +38,8 @@ public class Main168 {
 						piezaencontrada = true;
 						break;
 						// Sólo conocía Break en un "Switch". Sin poner break en el "if" no da error
-						// pero sí descuadra en consola.
+						// Pero es necesario para salir del bucle. Podemos forzar la salida del bucle
+						// igualando j a puzzle.lenght, pero esta manera me ha gustado más.
 						// He tenido que buscar la información del break "if" por internet.
 					}
 				}
@@ -54,7 +54,7 @@ public class Main168 {
 			}
 // Salida
 
-			System.out.println("Falta la pieza: " + pieza);
+			System.out.println(pieza);
 		}
 		return continuar;
 	}
